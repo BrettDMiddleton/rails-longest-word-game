@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 style="text-align: center;">LETTER GETTER</h1>
+  <div class="body">
+    <div class="row grid"></div>
+    <% @letters.each do |letter|%>
+    <p class="grid-element"><%= letter %></p>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="form">
+      <form action="/score" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="text" name="user_input">
+        <input type="submit" value="Guess!" class="btn btn-success">
+      </form>
+    </div>
+  </div>
+</div>
